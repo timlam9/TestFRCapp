@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "224147458062",
+    "project_id": "testfrcapp-cmp",
+    "storage_bucket": "testfrcapp-cmp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224147458062:android:07e5cb6b832a43a75f945f",
+        "android_client_info": {
+          "package_name": "com.lamti.testfrcapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBznp5Sb9yZGB4J1LtGkWltVLB_nlCUI1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

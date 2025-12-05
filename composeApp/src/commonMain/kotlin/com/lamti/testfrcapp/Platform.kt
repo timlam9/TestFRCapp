@@ -1,7 +1,8 @@
 package com.lamti.testfrcapp
 
-interface Platform {
-    val name: String
+interface DataRepository {
+
+    suspend fun getRemoteValue(key: String): String
 }
 
-expect fun getPlatform(): Platform
+expect fun getDataRepository(): DataRepository

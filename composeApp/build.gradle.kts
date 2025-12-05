@@ -6,6 +6,9 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
 }
 
 kotlin {
@@ -14,7 +17,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosArm64()
     ).forEach { iosTarget ->
@@ -23,11 +26,19 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            api(libs.gitlive.firebase.kotlin.crashlytics)
+            api(libs.gitlive.firebase.kotlin.analytics)
+            api(libs.gitlive.firebase.kotlin.config)
+
+//            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:34.6.0"))
+//            implementation("com.google.firebase:firebase-analytics")
+//            implementation("com.google.firebase:firebase-remoteConfig")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -41,6 +52,11 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        iosMain.dependencies {
+            api(libs.gitlive.firebase.kotlin.crashlytics)
+            api(libs.gitlive.firebase.kotlin.analytics)
+            api(libs.gitlive.firebase.kotlin.config)
         }
     }
 }
