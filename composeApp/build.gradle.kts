@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -35,10 +34,6 @@ kotlin {
             api(libs.gitlive.firebase.kotlin.crashlytics)
             api(libs.gitlive.firebase.kotlin.analytics)
             api(libs.gitlive.firebase.kotlin.config)
-
-//            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:34.6.0"))
-//            implementation("com.google.firebase:firebase-analytics")
-//            implementation("com.google.firebase:firebase-remoteConfig")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
